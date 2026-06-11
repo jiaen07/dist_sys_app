@@ -10,10 +10,8 @@ PASSWORD = "123"
 DATABASE = "campus"
 
 # Note the change to +asyncpg
-SQLALCHEMY_DATABASE_URL = os.getenv(
-    "DATABASE_URL", 
-    f"postgresql+asyncpg://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
-)
+SQLALCHEMY_DATABASE_URL = os.environ["DATABASE_URL"]
+
 
 # Create Async Engine
 engine = create_async_engine(
